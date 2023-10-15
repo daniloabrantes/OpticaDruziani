@@ -1,0 +1,7 @@
+create database catalogo;
+
+create table produtos(
+id int not null auto_increment primary key,
+nome varchar(30),
+preco float,
+descricao varchar(500))

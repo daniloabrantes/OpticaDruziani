@@ -1,0 +1,10 @@
+package opticadruziani.com.br;
+
+public class Produto {
+	
+	private int id;
+	private String
+	private float
+	private
+
+}

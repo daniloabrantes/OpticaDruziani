@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+C:\Users\danil\OneDrive\Documentos\Odio\Proj1\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+1661436182.index
+1537879394.index
+2471878626.index

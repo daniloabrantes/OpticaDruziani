@@ -1,0 +1,20 @@
+package br.com.produto.aplicacao;
+
+import br.com.opticadruziani.model.Produto;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		Produto produto = new Produto();
+	
+
+		produto.setNome("Oculos Teste");
+		produto.setId(02);
+		produto.setPreco(125);
+		produto.setDescricao("Descrição de teste para o novo produto");
+	
+	
+	}
+
+}

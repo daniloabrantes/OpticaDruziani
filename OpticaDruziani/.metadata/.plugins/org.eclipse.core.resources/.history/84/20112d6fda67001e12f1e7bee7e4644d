@@ -1,0 +1,10 @@
+package br.com.produto.aplicacao;
+
+import br.com.opticadruziani.model.Produto;
+
+public class Main {
+	
+	Produto produto = new Produto();
+	
+	produto
+}

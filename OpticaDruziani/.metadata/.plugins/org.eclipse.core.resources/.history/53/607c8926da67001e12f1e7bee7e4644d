@@ -1,0 +1,55 @@
+package br.com.opticadruziani.dao;
+
+import java.sql.Connection;
+
+import com.mysql.jdbc.PreparedStatement;
+
+import br.com.opticadruziani.factory.ConnectionFactory;
+import br.com.opticadruziani.model.Produto;
+huh
+public class OpticaDruzianiDao {
+	
+	/*
+	 * CRUD
+	 * CREATE
+	 * READ
+	 * UPDATE
+	 * DELETE
+	 */
+
+	public void save (Produto produto){
+	//insere um produto(Create)
+		String sql = "INSERT INTO PRODUTOS (nome, preco, descricao) VALUES (?, ?, ?)";
+		
+		Connection conn = null;
+		PreparedStatement pstm = null;
+		
+		try {
+			//tenta criar uma conexao com o banco de dados
+			conn = ConnectionFactory.createConnectionToMySQL();
+			
+			//cria uma PreparedStatement para executar uma query
+			pstm = (PreparedStatement) conn.prepareStatement(sql);
+			//adiciona os valores esperados pela query
+			pstm.setString(1, produto.getNome());
+			pstm.setFloat(2, produto.getPreco());
+			pstm.setString(3, produto.getDescricao());
+			//executa a query
+			pstm.execute();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			//fechar conexões
+			try {
+				if (pstm!=null) {
+					pstm.close();
+				}
+				if (conn!=null) {
+					conn.close();
+				}
+			}catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
